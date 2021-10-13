@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+   
+    height: 100vh;
+    margin: 0;
+    /* background-image: url(./Assets/got_bg.jpg); */
+    background-repeat: no-repeat;
+}
+
+
+.main-wrapper {
+    max-width: 1500px;
+}
+
+
+
+.gameinfo-wrapper {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    gap: 100px;
+    margin-top: 100px;
+    color: black;
+}
+
+.grid-wrapper {
+  /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.grid {
+ 
+align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  height: 170px;
+  width: 800px;
+  
+}
+
+.grid div {
+    /* background-color: rgba(88, 86, 78, 0.753); */
+  background-image: url();
+    flex-grow: 1;
+  height: 20%;
+  width: 6%;
+}
+
+.grid div.jon {
+    background-image: url(./Assets/game\ of\ thrones\,\ game\,\ thrones\,\ series\,\ character\,\ avatar\,\ unburned\,\ daenerys\,\ dragons\,\ queen_256px.png);
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position: center;
+   
+
+}
+
+
+.grid div.ice {
+    background-image: url(./Assets/game\ of\ thrones\,\ game\,\ thrones\,\ series\,\ ice\,\ fire\ _256px.png);
+    background-repeat: no-repeat;
+    background-size: 75px;
+    background-position: center;
+}
+
+.grid div.walker {
+    background-image: url(./Assets/game\ of\ thrones\,\ game\,\ thrones\,\ king\,\ walker\,\ north\,\ winter\,\ series_256px.png);
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position: center;
+}
+
+.grid div.obstacle {
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    /* background-color: rgba(194, 127, 51, 0.815); */
+
+}
+
+.grid div.dragon {
+    background-image: url(./Assets/game\ of\ thrones\,\ game\,\ thrones\,\ series\,\ character\,\ avatar\,\ dragon_256px.png);
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position: center;
+}
