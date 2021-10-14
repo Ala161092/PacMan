@@ -60,6 +60,7 @@ const dragonAudio = document.querySelector('#dragAudio')
 const walkerAudio = document.querySelector('#walkerAudio')
 const finalScoreBoard = document.querySelector('.finalBox')
 const scoreOne = document.querySelector('.scoreOne')
+
 //let variables
 let score = 0
 let lives = 3
@@ -237,7 +238,7 @@ let currentJonPosition = 15
                 lives = lives - 1
                 snowHit() 
                 walkerAudio.play()
-                walkerAudio.volume =2      
+                walkerAudio.volume = 1;      
                 cells[walker.currentIndex].classList.add(walker.className, 'walker')
                 livesDisplay.innerHTML = `Lives: <span>${lives}</span>`
                 walker.currentIndex == walker.startIndex
