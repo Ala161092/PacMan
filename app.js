@@ -207,8 +207,13 @@ let currentJonPosition = 15
                        
     function runGame() {
         document.addEventListener('keyup', movingJon)
+        
         mainAudio.volume = 0.7;
         mainAudio.play()
+        if (typeof mainAudio.loop == 'boolean')
+    {
+    mainAudio.loop = true;
+    }
         startGame()
         walkers.forEach(walker => moveWalker(walker))
     }
