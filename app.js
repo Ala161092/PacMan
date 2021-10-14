@@ -55,7 +55,6 @@ const dragonWalls = []
 const dragonBlock = 'dragon'
 const blankWalls = []
 const blankBlocks= 'blank'
-const finalResult = document.getElementById('finalScore')
 const mainAudio = document.querySelector('#audio')
 const dragonAudio = document.querySelector('#dragAudio')
 const walkerAudio = document.querySelector('#walkerAudio')
