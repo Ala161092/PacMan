@@ -11,18 +11,45 @@
 
 <body>
     <div class="main-wrapper">
-        <section class="gameinfo-wrapper">
-            <button id='btn-start'>Start Game</button>
-            <button id='btn-again'>Play Again</button>
-            <p id='countdown-timer'>Time Remaining: 90</p>
-            <p id="lives">Lives: 3</p>
-            <p id="score"> Score:</p>
-        </section>
-        <div class="grid-wrapper">
-            <div class="grid"></div>
+        <div class="gotflag">
+            <img src="./Assets/got_flag.png" />
         </div>
+        <section class="left-wrapper">
+            <section class="button-wrapper">
+                <a class='startGameBTN' id='btn-start'>Start Game</a>
+                <audio src="./Assets/Got.mp3" id="audio"></audio>
+                <audio src="./Assets/DragonCaptured.mp3" id="dragAudio"></audio>
+                <a class="playagainBTN" id='btn-again'>Play Again</a>
+            </section>
+            <section id="final-result" class="gameinfo-wrapper">
+                <p id='countdown-timer'>Timer:<span>60</span></p>
+                <p id="lives">Lives:<span>3</span></p>
+                <p id="score"> Score:</p>
+            </section>
+        </section>
+        <section class="grid-wrapper">
+            <div class="grid"></div>
+        </section>
+        <section class='instructions'>
+            <h2>Instructions:</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Tempore veniam similique corporis. Modi, eligendi aliquid omnis ab,
+                officia fugiat corrupti doloremque asperiores rerum fugit iste adipisci ea.
+                Accusamus, officia dicta?</p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Tempore veniam similique corporis. Modi, eligendi aliquid omnis ab,
+                officia fugiat corrupti doloremque asperiores rerum fugit iste adipisci ea.
+                Accusamus, officia dicta?
+            </p>
+        </section>
+
+
     </div>
     <script src="app.js"></script>
+
+
+
 </body>
 
 </html>
