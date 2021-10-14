@@ -4,6 +4,7 @@
 
 This is my first project from the General Assembly course SEI-59. 
 For my first project I went with the PacMan option. I added a GOT theme to the game. 
+Play game here; https://ala161092.github.io/PacMan/
 
 ## Getting Started
 To ensure I didn't get overwhelmed I started with psuedo code. I wrote out the logic of the game and included where I would be adding any sounds or animations. 
