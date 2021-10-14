@@ -141,25 +141,20 @@ let currentJonPosition = 15
             case 39: //move right
                 if (currentJonPosition % width < width - 1 && !cells[currentJonPosition + 1].classList.contains(obstacleBlocks))
                     currentJonPosition++
-                console.log('i have moved right')
                 break
             case 37: //move left
                 if (currentJonPosition % width !== 0 && !cells[currentJonPosition - 1].classList.contains(obstacleBlocks))
                     currentJonPosition--
-                console.log('i have moved left')
                 break
             case 38: //move up
                 if (currentJonPosition - width >= 0 && !cells[currentJonPosition - width].classList.contains(obstacleBlocks))
                     currentJonPosition -= width
-                console.log('i have moved up')
                 break
             case 40: //move down 
                 if (currentJonPosition + width < width * width && !cells[currentJonPosition + width].classList.contains(obstacleBlocks))
                     currentJonPosition += width
-                console.log('i have moved down')
                 break
         }
-        console.log('new position', currentJonPosition)
         addJon(currentJonPosition)
         snowFlakeEaten()
         retrieveDragon()
@@ -170,7 +165,6 @@ let currentJonPosition = 15
     function snowFlakeEaten() {
         if (cells[currentJonPosition].classList.contains(iceBlocks)) {
             score += 50
-            console.log('i have eaten some ice')
             cells[currentJonPosition].classList.remove(iceBlocks)
             scoreDisplay.innerHTML = `Score: <span>${score}</span>`
         }
@@ -182,7 +176,6 @@ let currentJonPosition = 15
             score += 200
             lives++
             dragonHit()
-            console.log('dragon conquered')
             cells[currentJonPosition].classList.remove(dragonBlock)
             livesDisplay.innerHTML = `Lives: <span>${lives}</span>`  
         }
@@ -208,8 +201,6 @@ let currentJonPosition = 15
     //adding walkers onto the grid 
     walkers.forEach(walker => {
         cells[walker.currentIndex].classList.add(walker.className)
-        console.log(walker.className)
-        console.log(walker.className)
         cells[walker.currentIndex].classList.add('walker')
 
     })
@@ -231,7 +222,6 @@ let currentJonPosition = 15
             if (!cells[walker.currentIndex + direction].classList.contains(obstacleBlocks) &&
                 !cells[walker.currentIndex + direction].classList.contains('walker') && 
                 !cells[walker.currentIndex + direction].classList.contains(blankBlocks)) {
-
                 cells[walker.currentIndex].classList.remove(walker.className)
                 cells[walker.currentIndex].classList.remove('walker')
                 //move into that space
@@ -240,7 +230,6 @@ let currentJonPosition = 15
             } else direction = directions[Math.floor(Math.random() * directions.length)]
 
             if(cells[walker.currentIndex].classList.contains('jon')){
-                console.log('i have been captured') 
                 cells[walker.currentIndex].classList.remove(walker.className, 'walker')
                 lives = lives - 1
                 snowHit() 
@@ -258,9 +247,6 @@ let currentJonPosition = 15
     }
 //function to end the game and clear board
     function endTheGame() {
-        // mainAudio.pause()
-        //stop the music
-        // removeJon(currentJonPosition)
         clearInterval(startCount)
         clearInterval(intervalId)
         walkers.forEach(walker => clearInterval(walker.timerId))
@@ -273,11 +259,9 @@ let currentJonPosition = 15
             intervalId = setInterval(() => {
             startCount--
             countdown.innerHTML = `Timer: <span>${startCount}</span>`
-            console.log('reducing time')
             if (startCount <= 0) {
                 clearInterval(intervalId)
                 endTheGame()
-                
             }
         }, 1000);
     }
@@ -285,14 +269,11 @@ let currentJonPosition = 15
 //restart the game if player wants to - this will reload the whole page on click
      function playAgain() {
         window.location.reload()
-
     }
-
     
 //eventlisteners
     startTheGame.addEventListener('click', runGame)
     playGameAgain.addEventListener('click', playAgain)
-  
 }
 
 window.addEventListener('DOMContentLoaded', init)
