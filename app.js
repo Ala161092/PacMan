@@ -172,6 +172,7 @@ let currentJonPosition = 15
     function retrieveDragon() {
         if (cells[currentJonPosition].classList.contains(dragonBlock)) { 
             dragonAudio.play()
+            dragonAudio.volume = 0.4;
             score += 200
             lives++
             dragonHit()
@@ -206,8 +207,7 @@ let currentJonPosition = 15
                        
     function runGame() {
         document.addEventListener('keyup', movingJon)
-        mainAudio.src = './assets/Got.mp3'
-        mainAudio.volume = 0.2;
+        mainAudio.volume = 0.7;
         mainAudio.play()
         startGame()
         walkers.forEach(walker => moveWalker(walker))
