@@ -6,42 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-    <title>Document</title>
+    <title>Game of Thrones | Welcome To The Targaryen House</title>
 </head>
 
 <body>
+
+    <div class="loadScreen">
+        <div class="loadlogo">
+            <img src="./Assets/gotLogo.png"/>
+            <a id="enterBtn">Enter The House Of Targaryen</a>
+        </div>
+    </div>
     <div class="main-wrapper">
+        <div class="finalBox">
+            <p class="scoreOne"> Score:</p>
+            <a class="playagainBTN" id='btn-again'>Play Again</a>
+        </div>
+       <div class="instructionBG">
+
+       </div>
         <div class="gotflag">
-            <img src="./Assets/got_flag.png" />
+            <img src="./Assets/got_flag.png"/>
         </div>
         <section class="left-wrapper">
             <section class="button-wrapper">
                 <a class='startGameBTN' id='btn-start'>Start Game</a>
                 <audio src="./Assets/Got.mp3" id="audio"></audio>
                 <audio src="./Assets/DragonCaptured.mp3" id="dragAudio"></audio>
-                <a class="playagainBTN" id='btn-again'>Play Again</a>
+                <audio src="./Assets/walkerScream.mp3" id="walkerAudio"></audio>
+                
             </section>
             <section id="final-result" class="gameinfo-wrapper">
                 <p id='countdown-timer'>Timer:<span>60</span></p>
                 <p id="lives">Lives:<span>3</span></p>
-                <p id="score"> Score:</p>
+                <p class="score"> Score:</p>
+                
             </section>
         </section>
         <section class="grid-wrapper">
+            <div class="iceHit"></div>
+            <div class="dragonHit"></div>
             <div class="grid"></div>
         </section>
         <section class='instructions'>
-            <h2>Instructions:</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Tempore veniam similique corporis. Modi, eligendi aliquid omnis ab,
-                officia fugiat corrupti doloremque asperiores rerum fugit iste adipisci ea.
-                Accusamus, officia dicta?</p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Tempore veniam similique corporis. Modi, eligendi aliquid omnis ab,
-                officia fugiat corrupti doloremque asperiores rerum fugit iste adipisci ea.
-                Accusamus, officia dicta?
-            </p>
+            <h2>HOW TO PLAY:</h2>
+            <p>Use the arrow functions on your keyboard to navigate your way through the maze</p>
+            <p>You must gather all the fire embers before you run out of time.</p>
+            <p>For each ember you collect you will gain 50points.</p>
+            <p>Be sure to avoid thse white walkers! If you get to your dragon in time you will gain an extra life!</p>
+            <p>Hurry now! Time is of the essence! Click the start button to get things moving</p>
         </section>
 
 
