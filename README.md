@@ -9,7 +9,7 @@ Play game here; https://ala161092.github.io/PacMan/
 ## Getting Started
 To ensure I didn't get overwhelmed I started with psuedo code. I wrote out the logic of the game and included where I would be adding any sounds or animations. 
 
-### Technologues Used
+### Technologies Used
 
 * JavaScript (ES6)
 * HTML5 
