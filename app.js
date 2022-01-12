@@ -1,75 +1,80 @@
- function init() {
+function init() {
 
-//Load Screen 
-const enterGameBtn = document.getElementById('enterBtn')
-let loadScreenNow = document.querySelector('.loadScreen')
-enterGameBtn.addEventListener('click', enterGame)
- 
-function enterGame(){
-    loadScreenNow.classList.toggle('hideLoadScreen')
- }
+    //Load Screen 
+    const enterGameBtn = document.getElementById('enterBtn')
+    let loadScreenNow = document.querySelector('.loadScreen')
+    enterGameBtn.addEventListener('click', enterGame)
 
-//Walker hit ice function
-let iceFade = document.querySelector('.iceHit')
- 
-function removeIce(){
-    iceFade.classList.remove('walkerIceHit')
-}
+    function enterGame() {
+        loadScreenNow.classList.toggle('hideLoadScreen')
+    }
 
- function snowHit(){
-     iceFade.classList.add('walkerIceHit')
-     setTimeout(removeIce, 2000)
- }
+    //Walker hit ice function
+    let iceFade = document.querySelector('.iceHit')
 
-//Dragon captured function
+    function removeIce() {
+        iceFade.classList.remove('walkerIceHit')
+    }
 
-let dragonFade = document.querySelector('.dragonHit')
+    function snowHit() {
+        iceFade.classList.add('walkerIceHit')
+        setTimeout(removeIce, 2000)
+    }
 
-function dragonHit() {
-    dragonFade.classList.add('dragonHitHide')
-}
+    //Dragon captured function
 
-//functionPopUpDisplay
-function finalScoreDisplay() {
-    finalScoreBoard.classList.add('finalBoxShow')
-    scoreOne.innerHTML = `Times Up! You have failed US! You score <br><span>${score}</span>`
-}
+    let dragonFade = document.querySelector('.dragonHit')
+
+    function dragonHit() {
+        dragonFade.classList.add('dragonHitHide')
+    }
+
+    //functionPopUpDisplay
+    function finalScoreDisplay() {
+        finalScoreBoard.classList.add('finalBoxShow')
+        scoreOne.innerHTML = `You have failed US! You score <br><span>${score}</span>`
+    }
+
+    function winnerScoreDisplay() {
+        finalScoreBoard.classList.add('finalBoxShow')
+        scoreOne.innerHTML = `You Win! You have Saved us All! Thank you Daenerys! <br><span>${score}</span>`
+    }
 
 
-//const variables
-const width = 16
-const cells = []
-const getGrid = document.querySelector('.grid')
-const scoreDisplay = document.querySelector('.score')
-const livesDisplay = document.getElementById('lives')
-const countdown = document.getElementById('countdown-timer')
-const startTheGame = document.getElementById('btn-start')
-const playGameAgain = document.getElementById('btn-again')
-const jonSnow = 'jon'
-const jonStartingPosition = 15
-const iceWalls = []
-const iceBlocks = 'ice'
-const obstacleWalls = []
-const obstacleBlocks = 'obstacle'
-const dragonWalls = []
-const dragonBlock = 'dragon'
-const blankWalls = []
-const blankBlocks= 'blank'
-const mainAudio = document.querySelector('#audio')
-const dragonAudio = document.querySelector('#dragAudio')
-const walkerAudio = document.querySelector('#walkerAudio')
-const finalScoreBoard = document.querySelector('.finalBox')
-const scoreOne = document.querySelector('.scoreOne')
+    //const variables
+    const width = 16
+    const cells = []
+    const getGrid = document.querySelector('.grid')
+    const scoreDisplay = document.querySelector('.score')
+    const livesDisplay = document.getElementById('lives')
+    const countdown = document.getElementById('countdown-timer')
+    const startTheGame = document.getElementById('btn-start')
+    const playGameAgain = document.getElementById('btn-again')
+    const jonSnow = 'jon'
+    const jonStartingPosition = 15
+    const iceWalls = []
+    const iceBlocks = 'ice'
+    const obstacleWalls = []
+    const obstacleBlocks = 'obstacle'
+    const dragonWalls = []
+    const dragonBlock = 'dragon'
+    const blankWalls = []
+    const blankBlocks = 'blank'
+    const mainAudio = document.querySelector('#audio')
+    const dragonAudio = document.querySelector('#dragAudio')
+    const walkerAudio = document.querySelector('#walkerAudio')
+    const finalScoreBoard = document.querySelector('.finalBox')
+    const scoreOne = document.querySelector('.scoreOne')
 
-//let variables
-let score = 0
-let lives = 3
-let startCount = 60
-let intervalId = null
-let currentJonPosition = 15
+    //let variables
+    let score = 0
+    let lives = 3
+    let startCount = 60
+    let intervalId = null
+    let currentJonPosition = 15
+    console.log('score---->', score)
 
-   
-//Grid Layout Array
+    //Grid Layout Array
     const layout = [
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
         2, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -89,7 +94,7 @@ let currentJonPosition = 15
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
     ]
 
-//Looping through the cells in the above array and assinging each labelled cell a class
+    //Looping through the cells in the above array and assinging each labelled cell a class
     function createGrid() {
         for (let i = 0; i < layout.length; i++) {
             const cell = document.createElement('div')
@@ -107,36 +112,36 @@ let currentJonPosition = 15
                     dragonWall.classList.add(dragonBlock)
                 })
 
-            } else if(layout[i] == 0){
+            } else if (layout[i] == 0) {
                 blankWalls.push(cells[i])
-                blankWalls.forEach(blankWall =>{
+                blankWalls.forEach(blankWall => {
                     blankWall.classList.add(blankBlocks)
                 })
 
-            }else if (layout[i] == 1) {
+            } else if (layout[i] == 1) {
                 iceWalls.push(cells[i])
                 iceWalls.forEach(iceWall => {
                     iceWall.classList.add(iceBlocks)
                 })
-            } 
+            }
         }
         addJon(jonStartingPosition)
     }
 
-//add MVP player onto the board 
+    //add MVP player onto the board 
     function addJon(position) {
         cells[position].classList.add(jonSnow)
     }
-//remove MVP player from the board 
+    //remove MVP player from the board 
     function removeJon(position) {
         cells[position].classList.remove(jonSnow)
     }
 
-// MVP can only enter cells that contain snowflakes. If obstacles encountered player cannot move.
+    // MVP can only enter cells that contain snowflakes. If obstacles encountered player cannot move.
     function movingJon(event) {
         console.log('old position', currentJonPosition)
         removeJon(currentJonPosition)
-        
+
         switch (event.keyCode) {
             case 39: //move right
                 if (currentJonPosition % width < width - 1 && !cells[currentJonPosition + 1].classList.contains(obstacleBlocks))
@@ -159,7 +164,7 @@ let currentJonPosition = 15
         snowFlakeEaten()
         retrieveDragon()
     }
-    
+
 
     //scoring to add points for each flake eaten
     function snowFlakeEaten() {
@@ -167,18 +172,23 @@ let currentJonPosition = 15
             score += 50
             cells[currentJonPosition].classList.remove(iceBlocks)
             scoreDisplay.innerHTML = `Score: <span>${score}</span>`
+        } if (cells[currentJonPosition].classList.contains(dragonBlock)) {
+            score += 200
+            scoreDisplay.innerHTML = `Score: <span>${score}</span>`
+        } if (score >= 7400) {
+            endTheGame()
+            winnerScoreDisplay()
         }
     }
     //scoring to add points and an extra life if dragon has been encountered
     function retrieveDragon() {
-        if (cells[currentJonPosition].classList.contains(dragonBlock)) { 
+        if (cells[currentJonPosition].classList.contains(dragonBlock)) {
             dragonAudio.play()
             dragonAudio.volume = 0.4;
-            score += 200
             lives++
             dragonHit()
             cells[currentJonPosition].classList.remove(dragonBlock)
-            livesDisplay.innerHTML = `Lives: <span>${lives}</span>`  
+            livesDisplay.innerHTML = `Lives: <span>${lives}</span>`
         }
     }
     createGrid()
@@ -205,15 +215,14 @@ let currentJonPosition = 15
         cells[walker.currentIndex].classList.add('walker')
 
     })
-                       
+
     function runGame() {
         document.addEventListener('keyup', movingJon)
         mainAudio.volume = 0.7;
         mainAudio.play()
-        if (typeof mainAudio.loop == 'boolean')
-    {
-    mainAudio.loop = true;
-    }
+        if (typeof mainAudio.loop == 'boolean') {
+            mainAudio.loop = true;
+        }
         startGame()
         walkers.forEach(walker => moveWalker(walker))
     }
@@ -221,10 +230,10 @@ let currentJonPosition = 15
     function moveWalker(walker) {
         const directions = [-1, +1, width, -width]
         let direction = directions[Math.floor(Math.random() * directions.length)]
-       
-        walker.timerId = setInterval(function() {
+
+        walker.timerId = setInterval(function () {
             if (!cells[walker.currentIndex + direction].classList.contains(obstacleBlocks) &&
-                !cells[walker.currentIndex + direction].classList.contains('walker') && 
+                !cells[walker.currentIndex + direction].classList.contains('walker') &&
                 !cells[walker.currentIndex + direction].classList.contains(blankBlocks)) {
                 cells[walker.currentIndex].classList.remove(walker.className)
                 cells[walker.currentIndex].classList.remove('walker')
@@ -233,34 +242,33 @@ let currentJonPosition = 15
                 cells[walker.currentIndex].classList.add(walker.className, 'walker')
             } else direction = directions[Math.floor(Math.random() * directions.length)]
 
-            if(cells[walker.currentIndex].classList.contains('jon')){
+            if (cells[walker.currentIndex].classList.contains('jon')) {
                 cells[walker.currentIndex].classList.remove(walker.className, 'walker')
                 lives = lives - 1
-                snowHit() 
+                snowHit()
                 walkerAudio.play()
-                walkerAudio.volume = 1;      
+                walkerAudio.volume = 1;
                 cells[walker.currentIndex].classList.add(walker.className, 'walker')
                 livesDisplay.innerHTML = `Lives: <span>${lives}</span>`
                 walker.currentIndex == walker.startIndex
                 cells[walker.currentIndex].classList.remove(walker.className, 'walker')
-             } if (lives < 1){
-                scoreOne.innerHTML = `Times Up! You have failed US! You score <span>${score}</span>`
+            } if (lives < 1) {
                 endTheGame()
-             }       
-        },300)
+                finalScoreDisplay()
+            }
+        }, 300)
     }
-//function to end the game and clear board
+    //function to end the game and clear board
     function endTheGame() {
         clearInterval(startCount)
         clearInterval(intervalId)
         walkers.forEach(walker => clearInterval(walker.timerId))
         document.removeEventListener('keyup', movingJon)
-        finalScoreDisplay()
     }
 
-//start gamne function 
+    //start gamne function 
     function startGame() {
-            intervalId = setInterval(() => {
+        intervalId = setInterval(() => {
             startCount--
             countdown.innerHTML = `Timer: <span>${startCount}</span>`
             if (startCount <= 0) {
@@ -269,13 +277,13 @@ let currentJonPosition = 15
             }
         }, 1000);
     }
-     
-//restart the game if player wants to - this will reload the whole page on click
-     function playAgain() {
+
+    //restart the game if player wants to - this will reload the whole page on click
+    function playAgain() {
         window.location.reload()
     }
-    
-//eventlisteners
+
+    //eventlisteners
     startTheGame.addEventListener('click', runGame)
     playGameAgain.addEventListener('click', playAgain)
 }

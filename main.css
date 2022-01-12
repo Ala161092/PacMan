@@ -74,10 +74,10 @@ a:active {
 .main-wrapper {
     margin: 0 auto;
     margin-top: 237px;
-    max-width: 1300px;
+    max-width: 1280px;
     display: flex;
     flex-direction: row;
-    gap: 49px;
+    gap: 45px;
     align-items: flex-start;
     position: relative;
     width: 100%;
@@ -322,7 +322,7 @@ a:active {
 }
 
 .instructionBG {
-    width: 712px;
+    width: 690px;
     height: 531px;
     background-image: url('./Assets/bookBG.jpeg');
     position: absolute;
