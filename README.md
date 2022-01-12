@@ -28,7 +28,7 @@ Hurry now! Time is of the essence! Click the start button to get things moving
 
 ## Authors
 
-Contributors names and contact info
+
 
 Ala Abdelrahman  
 
