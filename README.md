@@ -175,7 +175,7 @@ https://user-images.githubusercontent.com/77459312/151879285-55f4dae1-a00a-41ef-
 ![Screenshot 2022-01-31 at 21-55-06 Game of Thrones Welcome To The Targaryen House](https://user-images.githubusercontent.com/77459312/151879538-f3fbf361-4120-40fc-a876-ebdcc7ab9e0a.png)
 
 # Future Improvments
-  • With more time, I would like to make the game have multiple levels. At each level the time to clear the board will shorten. 
+  • With more time, I would like to make the game have multiple levels. At each level the time to clear the board will shorten.   
   • I would also like to improve the white walker movement, the current movement is random, I would ideally like to add some logic where the walkers would scope out the main character based on their current coordinates in the grid. 
 
 # Wins & Key Learnings:
