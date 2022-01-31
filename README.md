@@ -49,6 +49,7 @@ https://ala161092.github.io/PacMan/
  ### Planning:
  
  To ensure I didn't get overwhelmed with the process, I started out with a short wireframe. I wrote out the logic of the game and included where I would be adding   any sounds or animations.
+ 
 ![Screenshot 2022-01-31 at 21 36 31](https://user-images.githubusercontent.com/77459312/151877088-eb295700-eccc-4f67-9f35-d64c05ae6f67.png)
 
 I also used Figma, to draw up a quick visual representation of what I wanted the game to look like.
