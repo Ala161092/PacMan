@@ -18,7 +18,7 @@ This was my first project from the General Assembly course. We were given 8 days
 
 # Deployment
 This game has been deployed using GitHub pages and can be found here. 
-https://ala161092.github.io/PacMan/
+https://ala161092.github.io/Sei-Project-1-PacMan/
 
   ## How To Play:
   • Use the arrow functions on your keyboard to navigate your way through the maze.  
